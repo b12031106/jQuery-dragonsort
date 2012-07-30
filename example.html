@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript" src="code.js"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function(){
+		jQuery('.area').dragonsort({
+			dragDirection : 'both'
+		}, 0);
+		jQuery('.area').disableSelection();
+	});
+
+	function add() {
+		$('.area').append('<div class="div4 testbox"></div>');
+	}
+
+</script>
+<style>
+	.testbox {
+		width : 200px;
+		height : 200px;
+		margin : 10px;
+		display : inline-block;
+	}
+
+	.div1 {
+		background-color: black;
+		z-index : 1;
+	}
+
+	.div2 {
+		background-color: green;
+		z-index : 2;
+	}
+
+	.div3 {
+		background-color: yellow;
+		z-index : 3;
+	}
+
+	.div4 {
+		background-color : pink;
+		z-index : 4;
+	}
+
+</style>
+
+<div class="area">
+<div class="div1 testbox"></div>
+<div class="div2 testbox"></div>
+<div class="div3 testbox"></div>
+</div>
+
+<button onclick="add();">add</button>
